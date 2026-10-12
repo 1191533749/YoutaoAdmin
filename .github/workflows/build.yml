@@ -20,10 +20,12 @@ jobs:
 
       - name: Build (unsigned)
         run: |
+          set -o pipefail
           xcodebuild -project YoutaoAdmin.xcodeproj -scheme YoutaoAdmin \
             -configuration Release -sdk iphoneos \
             -derivedDataPath build \
-            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=""
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
+            2>&1 | tee build.log
 
       - name: Package IPA
         run: |
@@ -56,3 +58,21 @@ jobs:
           git add YoutaoAdmin.ipa
           git commit -qm "build: YoutaoAdmin.ipa for $GITHUB_SHA"
           git push -f "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" dist
+
+      # 无论成功失败都把编译日志推到 logs 分支：Actions 的 logs 接口需要认证，本机拿不到
+      - name: Publish build log to logs branch
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p /tmp/logs
+          if [ -f build.log ]; then cp build.log /tmp/logs/build.log; else echo "no build.log" > /tmp/logs/build.log; fi
+          echo "status=${{ job.status }} sha=$GITHUB_SHA" > /tmp/logs/status.txt
+          cd /tmp/logs
+          git init -q
+          git checkout -q -b logs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -qm "log $GITHUB_SHA ${{ job.status }}"
+          git push -f "https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY.git" logs
