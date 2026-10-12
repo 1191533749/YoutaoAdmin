@@ -79,7 +79,7 @@ private struct UserRow: View {
                     StatusBadge(text: Labels.userStatusLabel(row.str("status")),
                                 color: row.str("status") == "hidden" ? .appRed : .appGreen)
                 }
-                Text("@\(row.str("username"))\(row.str("mobile").isEmpty ? "" : " · \(row.str("mobile"))")
+                Text(row.str("mobile").isEmpty ? "@" + row.str("username") : "@" + row.str("username") + " · " + row.str("mobile"))
                     .font(.caption).foregroundColor(.secondary)
             }
             Spacer()

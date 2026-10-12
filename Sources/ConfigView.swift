@@ -65,7 +65,8 @@ struct ConfigView: View {
         defer { isLoading = false }
         guard let api = state.api else { return }
         do {
-            let html = String(data: try await api.getRaw(path: "general/config/index"), encoding: .utf8) ?? ""
+            let raw = String(data: try await api.getRaw(path: "general/config/index"), encoding: .utf8) ?? ""
+            let html = raw.replacingOccurrences(of: "\\", with: "")
             token = ResponseParser.token(from: html) ?? ""
             dylibOn = (Self.inputValue(html, key: "dylib-on") ?? "0") == "1"
             look = Self.inputValue(html, key: "dylib-look") ?? "1"
@@ -113,7 +114,7 @@ struct ConfigView: View {
         return firstMatch(block, pattern: "<option[^>]*selected[^>]*value=\"([^\"]*)\"")
     }
     private static func textareaValue(_ html: String, key: String) -> String? {
-        let pattern = "<textarea[^>]*name=\"row\\[\(key)\]\"[^>]*>([\\s\\S]*?)</textarea>"
+        let pattern = "<textarea[^>]*name=\"row\\[\(key)\\]\"[^>]*>([\\s\\S]*?)</textarea>"
         return firstMatch(html, pattern: pattern)
     }
     private static func firstMatch(_ html: String, pattern: String) -> String? {
