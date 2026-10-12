@@ -108,7 +108,7 @@ enum ResponseParser {
             return ns.substring(with: m.range(at: 1))
         }
         // 兜底：取任意 index.php?s=/captcha 链接
-        guard let r2 = try? NSRegularExpression(pattern: "src=\"([^\"]*index\.php\?s=/captcha[^\"]*)\"") else { return nil }
+        guard let r2 = try? NSRegularExpression(pattern: "src=\"([^\"]*index\\.php\\?s=/captcha[^\"]*)\"") else { return nil }
         if let m = r2.firstMatch(in: html, range: NSRange(location: 0, length: ns.length)), m.numberOfRanges > 1 {
             return ns.substring(with: m.range(at: 1))
         }
