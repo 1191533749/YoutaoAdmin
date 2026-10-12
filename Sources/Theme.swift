@@ -11,11 +11,9 @@ extension Color {
     static let appTeal   = Color(red: 0.11, green: 0.64, blue: 0.64)   // 青
 }
 
-struct AppGradient: View {
-    var body: some View {
-        LinearGradient(colors: [.appAccent, .appViolet],
-                       startPoint: .topLeading, endPoint: .bottomTrailing)
-    }
+extension LinearGradient {
+    static let app = LinearGradient(colors: [.appAccent, .appViolet],
+                                    startPoint: .topLeading, endPoint: .bottomTrailing)
 }
 
 extension View {

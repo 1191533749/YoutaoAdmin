@@ -21,7 +21,7 @@ struct SetupView: View {
                     }
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 36)
-                    .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(AppGradient()))
+                    .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(LinearGradient.app))
                     .padding(.horizontal)
 
                     VStack(spacing: 12) {

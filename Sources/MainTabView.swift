@@ -57,7 +57,7 @@ struct OverviewView: View {
                 }
                 .padding(18)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(AppGradient()))
+                .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(LinearGradient.app))
                 .padding(.horizontal)
 
                 // 统计
