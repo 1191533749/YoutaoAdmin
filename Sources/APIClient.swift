@@ -91,6 +91,7 @@ enum ResponseParser {
 
     // 从 HTML 里解析隐藏 __token__ 字段
     static func token(from html: String) -> String? {
+        let html = html.replacingOccurrences(of: "\\", with: "")
         guard let r = try? NSRegularExpression(pattern: "name=\"__token__\" value=\"([^\"]+)\"") else { return nil }
         let ns = html as NSString
         let m = r.firstMatch(in: html, range: NSRange(location: 0, length: ns.length))
@@ -102,6 +103,7 @@ enum ResponseParser {
 
     // 从登录页 HTML 解析验证码图片 URL
     static func captchaURL(from html: String) -> String? {
+        let html = html.replacingOccurrences(of: "\\", with: "")
         guard let r = try? NSRegularExpression(pattern: "<img[^>]*src=\"([^\"]+)\"[^>]*width=\"100\"") else { return nil }
         let ns = html as NSString
         if let m = r.firstMatch(in: html, range: NSRange(location: 0, length: ns.length)), m.numberOfRanges > 1 {
