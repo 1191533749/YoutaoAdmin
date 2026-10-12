@@ -12,52 +12,52 @@ struct ConfigView: View {
     @State private var token = ""
 
     var body: some View {
-        NavigationView {
-            Form {
-                Section(header: Text("动态库 UDID 验证（授权弹窗）")) {
-                    Toggle("总开关", isOn: $dylibOn)
-                    HStack {
-                        Text("远程时间锁（分钟）")
-                        Spacer()
-                        TextField("分钟", text: $look)
-                            .keyboardType(.numberPad)
-                            .multilineTextAlignment(.trailing)
-                            .frame(width: 80)
-                    }
-                    Picker("公告模式", selection: $control) {
-                        ForEach(0..<Labels.controlOptions.count, id: \.self) { i in
-                            Text(Labels.controlOptions[i].label).tag(Labels.controlOptions[i].value)
-                        }
-                    }
-                    HStack {
-                        Text("公告消失（秒）")
-                        Spacer()
-                        TextField("秒", text: $time)
-                            .keyboardType(.numberPad)
-                            .multilineTextAlignment(.trailing)
-                            .frame(width: 80)
+        Form {
+            Section(header: Text("动态库 UDID 验证（授权弹窗）")) {
+                Toggle("总开关", isOn: $dylibOn).tint(.appAccent)
+                HStack {
+                    Text("远程时间锁（分钟）")
+                    Spacer()
+                    TextField("分钟", text: $look)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.trailing)
+                        .frame(width: 80)
+                }
+                Picker("公告模式", selection: $control) {
+                    ForEach(0..<Labels.controlOptions.count, id: \.self) { i in
+                        Text(Labels.controlOptions[i].label).tag(Labels.controlOptions[i].value)
                     }
                 }
-                Section(header: Text("公告文本")) {
-                    TextEditor(text: $notice)
-                        .frame(minHeight: 140)
-                        .font(.system(.footnote, design: .monospaced))
-                }
-                if let message = message {
-                    Section { Text(message).font(.footnote).foregroundColor(.green) }
-                }
-                Section {
-                    Button {
-                        Task { await save() }
-                    } label: {
-                        if isLoading { ProgressView() } else { Text("保存配置").frame(maxWidth: .infinity) }
-                    }
-                    .disabled(isLoading)
+                HStack {
+                    Text("公告消失（秒）")
+                    Spacer()
+                    TextField("秒", text: $time)
+                        .keyboardType(.numberPad)
+                        .multilineTextAlignment(.trailing)
+                        .frame(width: 80)
                 }
             }
-            .navigationTitle("授权弹窗设置")
-            .task { await load() }
+            Section(header: Text("公告文本")) {
+                TextEditor(text: $notice)
+                    .frame(minHeight: 140)
+                    .font(.system(.footnote, design: .monospaced))
+            }
+            if let message = message {
+                Section { Text(message).font(.footnote).foregroundColor(.green) }
+            }
+            Section {
+                Button {
+                    Task { await save() }
+                } label: {
+                    if isLoading { ProgressView() } else { Text("保存配置").frame(maxWidth: .infinity) }
+                }
+                .buttonStyle(PrimaryButtonStyle())
+                .disabled(isLoading)
+            }
         }
+        .navigationTitle("授权弹窗设置")
+        .navigationBarTitleDisplayMode(.inline)
+        .task { await load() }
     }
 
     private func load() async {
@@ -93,10 +93,8 @@ struct ConfigView: View {
         do {
             let data = try await api.postForm(path: "general/config/edit", fields: fields)
             switch ResponseParser.result(from: data) {
-            case .success(let msg):
-                message = msg
-            case .failure(let e):
-                message = e.message
+            case .success(let msg): message = msg
+            case .failure(let e): message = e.message
             }
             await load()
         } catch {
@@ -104,24 +102,20 @@ struct ConfigView: View {
         }
     }
 
-    // MARK: - HTML 解析
     private static func inputValue(_ html: String, key: String) -> String? {
         let pattern = "name=\"row\\[\(key)\\]\"[^>]*value=\"([^\"]*)\""
         return firstMatch(html, pattern: pattern)
     }
-
     private static func selectValue(_ html: String, key: String) -> String? {
         let blockPattern = "<select[^>]*name=\"row\\[\(key)\\]\"[^>]*>([\\s\\S]*?)</select>"
         guard let block = firstMatch(html, pattern: blockPattern) else { return nil }
         if let v = firstMatch(block, pattern: "<option[^>]*value=\"([^\"]*)\"[^>]*selected") { return v }
         return firstMatch(block, pattern: "<option[^>]*selected[^>]*value=\"([^\"]*)\"")
     }
-
     private static func textareaValue(_ html: String, key: String) -> String? {
-        let pattern = "<textarea[^>]*name=\"row\\[\(key)\\]\"[^>]*>([\\s\\S]*?)</textarea>"
+        let pattern = "<textarea[^>]*name=\"row\\[\(key)\]\"[^>]*>([\\s\\S]*?)</textarea>"
         return firstMatch(html, pattern: pattern)
     }
-
     private static func firstMatch(_ html: String, pattern: String) -> String? {
         guard let regex = try? NSRegularExpression(pattern: pattern) else { return nil }
         let ns = html as NSString

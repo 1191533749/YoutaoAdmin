@@ -15,45 +15,79 @@ struct LoginView: View {
 
     var body: some View {
         NavigationView {
-            Form {
-                Section(header: Text("登录后台")) {
-                    TextField("账号", text: $username)
-                        .autocapitalization(.none).disableAutocorrection(true)
-                    SecureField("密码", text: $password)
-                    HStack(spacing: 10) {
-                        TextField("验证码", text: $captchaText)
-                            .keyboardType(.asciiCapable)
-                            .autocapitalization(.allCharacters)
-                            .disableAutocorrection(true)
-                        if let img = captchaImage {
-                            Image(uiImage: img)
-                                .resizable().scaledToFit()
-                                .frame(width: 110, height: 34)
-                                .onTapGesture { Task { await refreshCaptcha() } }
-                        } else {
-                            Rectangle().fill(Color.gray.opacity(0.15))
-                                .frame(width: 110, height: 34)
-                                .overlay(Text("点击刷新").font(.caption2).foregroundColor(.secondary))
-                                .onTapGesture { Task { await refreshCaptcha() } }
-                        }
+            ScrollView {
+                VStack(spacing: 20) {
+                    VStack(spacing: 8) {
+                        Image(systemName: "shippingbox.fill")
+                            .font(.system(size: 40)).foregroundColor(.white)
+                        Text("优淘后台").font(.title.bold()).foregroundColor(.white)
+                        Text(state.config?.siteRoot ?? "").font(.caption).foregroundColor(.white.opacity(0.85))
                     }
-                }
-                if let errorMessage = errorMessage {
-                    Section { Text(errorMessage).foregroundColor(.red).font(.footnote) }
-                }
-                Section {
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 36)
+                    .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(AppGradient()))
+                    .padding(.horizontal)
+
+                    VStack(spacing: 12) {
+                        FieldCard(icon: "person", title: "账号") {
+                            TextField("账号", text: $username)
+                                .autocapitalization(.none).disableAutocorrection(true)
+                        }
+                        FieldCard(icon: "lock", title: "密码") {
+                            SecureField("密码", text: $password)
+                        }
+                        // 验证码
+                        HStack(spacing: 12) {
+                            Image(systemName: "shield")
+                                .font(.system(size: 15, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(width: 34, height: 34)
+                                .background(RoundedRectangle(cornerRadius: 9).fill(Color.appViolet))
+                            TextField("验证码", text: $captchaText)
+                                .keyboardType(.asciiCapable)
+                                .autocapitalization(.allCharacters)
+                                .disableAutocorrection(true)
+                            if let img = captchaImage {
+                                Image(uiImage: img)
+                                    .resizable().scaledToFit()
+                                    .frame(width: 96, height: 34)
+                                    .clipShape(RoundedRectangle(cornerRadius: 6))
+                                    .onTapGesture { Task { await refreshCaptcha() } }
+                            } else {
+                                Text("点击刷新")
+                                    .font(.caption2).foregroundColor(.appAccent)
+                                    .frame(width: 96, height: 34)
+                                    .background(RoundedRectangle(cornerRadius: 6).fill(Color.appAccent.opacity(0.12)))
+                                    .onTapGesture { Task { await refreshCaptcha() } }
+                            }
+                        }
+                        .padding(14)
+                        .background(RoundedRectangle(cornerRadius: 14, style: .continuous)
+                            .fill(Color(UIColor.secondarySystemGroupedBackground)))
+                    }
+                    .padding(.horizontal)
+
+                    if let errorMessage = errorMessage {
+                        Text(errorMessage).font(.footnote).foregroundColor(.appRed)
+                            .padding(.horizontal)
+                    }
+
                     Button {
                         Task { await doLogin() }
                     } label: {
-                        if isLoading { ProgressView() } else { Text("登录").frame(maxWidth: .infinity) }
+                        if isLoading { ProgressView().tint(.white) } else { Text("登录").frame(maxWidth: .infinity) }
                     }
+                    .buttonStyle(PrimaryButtonStyle())
                     .disabled(isLoading)
-                }
-                Section {
-                    Button("重置服务器设置") { state.reset() }.foregroundColor(.red)
+                    .padding(.horizontal)
+
+                    Button("重置服务器设置") { state.reset() }
+                        .font(.footnote).foregroundColor(.secondary)
+                        .padding(.bottom, 20)
                 }
             }
-            .navigationTitle("登录")
+            .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
+            .navigationBarHidden(true)
             .onAppear {
                 guard !didLoad else { return }
                 didLoad = true

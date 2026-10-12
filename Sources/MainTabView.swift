@@ -5,88 +5,105 @@ struct MainTabView: View {
 
     var body: some View {
         TabView {
-            DashboardView()
-                .tabItem { Label("概览", systemImage: "square.grid.2x2") }
+            OverviewView()
+                .tabItem { Label("概览", systemImage: "square.grid.2x2.fill") }
             KamiView()
-                .tabItem { Label("卡密", systemImage: "key") }
-            BlackView()
-                .tabItem { Label("黑名单", systemImage: "nosign") }
-            MonitorView()
-                .tabItem { Label("监控", systemImage: "exclamationmark.triangle") }
+                .tabItem { Label("卡密", systemImage: "key.fill") }
+            SecurityView()
+                .tabItem { Label("安全", systemImage: "shield.fill") }
             CategoryView()
-                .tabItem { Label("分类", systemImage: "square.stack.3d.up") }
-            ConfigView()
-                .tabItem { Label("设置", systemImage: "gearshape") }
+                .tabItem { Label("分类", systemImage: "square.stack.3d.up.fill") }
+            SystemView()
+                .tabItem { Label("系统", systemImage: "gearshape.fill") }
         }
+        .accentColor(.appAccent)
     }
 }
 
-struct DashboardView: View {
+// 概览：顶部渐变 + 统计卡片
+struct OverviewView: View {
     @EnvironmentObject var state: AppState
     @State private var counts: [String: Int] = [:]
-    @State private var errorMessage: String?
+    @State private var isLoading = false
+
+    private var siteRoot: String { state.config?.siteRoot ?? "" }
 
     var body: some View {
-        NavigationView {
-            ScrollView {
-                if let errorMessage = errorMessage {
-                    Text(errorMessage).foregroundColor(.red).font(.footnote).padding(.top)
+        ScrollView {
+            VStack(spacing: 14) {
+                // 顶部渐变卡片
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text("优淘后台").font(.title2.weight(.bold)).foregroundColor(.white)
+                            Text(siteRoot).font(.caption).foregroundColor(.white.opacity(0.85))
+                        }
+                        Spacer()
+                        Button {
+                            state.logout()
+                        } label: {
+                            Image(systemName: "rectangle.portrait.and.arrow.right")
+                                .font(.system(size: 16, weight: .semibold))
+                                .foregroundColor(.white)
+                                .padding(10)
+                                .background(Circle().fill(Color.white.opacity(0.18)))
+                        }
+                    }
+                    HStack(spacing: 6) {
+                        StatusBadge(text: "已连接", color: .white)
+                            .background(Capsule().fill(Color.white.opacity(0.22)))
+                        Text("管理端在线").font(.caption).foregroundColor(.white.opacity(0.85))
+                    }
                 }
+                .padding(18)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .background(RoundedRectangle(cornerRadius: 20, style: .continuous).fill(AppGradient()))
+                .padding(.horizontal)
+
+                // 统计
                 LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                    StatCard(title: "卡密总数", value: counts["kami"] ?? -1, color: .blue)
-                    StatCard(title: "黑名单", value: counts["black"] ?? -1, color: .red)
-                    StatCard(title: "异常监控", value: counts["monitor"] ?? -1, color: .orange)
-                    StatCard(title: "软件源App", value: counts["category"] ?? -1, color: .green)
+                    StatTile(icon: "key.fill", tint: .appBlue, title: "卡密总数", value: valueText("kami"))
+                    StatTile(icon: "nosign", tint: .appRed, title: "黑名单", value: valueText("black"))
+                    StatTile(icon: "exclamationmark.triangle.fill", tint: .appOrange, title: "异常监控", value: valueText("monitor"))
+                    StatTile(icon: "person.2.fill", tint: .appTeal, title: "会员总数", value: valueText("user"))
                 }
-                .padding()
+                .padding(.horizontal)
+
+                Spacer(minLength: 8)
             }
-            .navigationTitle("概览")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button { Task { await load() } } label: { Image(systemName: "arrow.clockwise") }
-                }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button { state.logout() } label: { Image(systemName: "rectangle.portrait.and.arrow.right") }
-                }
-            }
-            .task { await load() }
+            .padding(.vertical)
         }
+        .background(Color(UIColor.systemGroupedBackground).ignoresSafeArea())
+        .overlay(alignment: .topTrailing) {
+            if isLoading {
+                ProgressView().padding(.trailing, 20).padding(.top, 4)
+            }
+        }
+        .task { await load() }
+        .refreshable { await load() }
+    }
+
+    private func valueText(_ key: String) -> String {
+        guard let v = counts[key] else { return "—" }
+        return v >= 0 ? "\(v)" : "—"
     }
 
     private func load() async {
-        errorMessage = nil
+        isLoading = true
+        defer { isLoading = false }
         guard let api = state.api else { return }
         var result: [String: Int] = [:]
-        var failed = false
         for (key, path) in [("kami", "kami/index?limit=1"),
                             ("black", "black/index?limit=1"),
                             ("monitor", "monitor/index?limit=1"),
-                            ("category", "category/index?limit=1")] {
+                            ("user", "user/index?limit=1")] {
             if let data = try? await api.getRaw(path: path),
                let list = ResponseParser.list(from: data) {
                 result[key] = list.total
             } else {
                 result[key] = -1
-                failed = true
             }
         }
-        if failed { errorMessage = "部分数据加载失败（可能是会话过期），请下拉刷新或退出重登" }
         counts = result
-    }
-}
-
-struct StatCard: View {
-    let title: String
-    let value: Int
-    let color: Color
-
-    var body: some View {
-        VStack(spacing: 6) {
-            Text(value >= 0 ? "\(value)" : "—").font(.system(size: 34, weight: .bold))
-            Text(title).font(.subheadline).foregroundColor(.secondary)
-        }
-        .frame(maxWidth: .infinity)
-        .padding(.vertical, 24)
-        .background(RoundedRectangle(cornerRadius: 12).fill(color.opacity(0.12)))
     }
 }
