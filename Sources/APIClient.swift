@@ -76,12 +76,14 @@ enum ResponseParser {
         guard let obj = jsonObject(data) else {
             return .failure(APIError(message: "响应不是有效 JSON"))
         }
+        // FastAdmin 的 $this->success() / $this->error() 在无参调用时返回 msg:"",
+        // 空字符串不会走 ?? 兜底，会被视图层渲染成一行「没有内容的白框」。
+        // 在解析层统一兜底，一次修复所有模块。
+        let raw = (obj["msg"] as? String)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
         if let code = obj["code"] as? NSNumber, code.intValue == 1 {
-            let msg = obj["msg"] as? String ?? "操作成功"
-            return .success(msg)
+            return .success(raw.isEmpty ? "操作成功" : raw)
         }
-        let msg = obj["msg"] as? String ?? "操作失败"
-        return .failure(APIError(message: msg))
+        return .failure(APIError(message: raw.isEmpty ? "操作失败" : raw))
     }
 
     static func isLoggedIn(_ data: Data) -> Bool {
