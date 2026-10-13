@@ -148,11 +148,21 @@ private struct BlackListView: View {
         }
     }
 
+    // 左滑删除（Web 后台 black/del?ids=N）；失败/成功都给可见反馈，不再静默
     private func deleteRows(at offsets: IndexSet) {
         guard let first = offsets.map({ rows[$0].id }).first, let api = state.api else { return }
         Task {
-            if let data = try? await api.getRaw(path: "black/del/ids/\(first)") {
-                if case .success = ResponseParser.result(from: data) { await load() }
+            do {
+                let data = try await api.getRaw(path: "black/del/ids/\(first)")
+                switch ResponseParser.result(from: data) {
+                case .success(let msg):
+                    await load()
+                    showBanner(Feedback.success("\(msg)：已从黑名单移除"))
+                case .failure(let e):
+                    showBanner(Feedback.failure(e.message))
+                }
+            } catch {
+                showBanner(Feedback.failure("删除失败：\(error.localizedDescription)"))
             }
         }
     }
@@ -171,6 +181,8 @@ private struct MonitorListView: View {
     @State private var newIdentity = ""
     @State private var addFeedback: Feedback?
     @State private var saving = false
+    @State private var pendingBlack: Row?
+    @State private var blacking = false
 
     var body: some View {
         Group {
@@ -180,29 +192,50 @@ private struct MonitorListView: View {
                 List {
                     ForEach(rows) { row in
                         HStack(spacing: 12) {
-                            Image(systemName: "exclamationmark.triangle.fill")
-                                .font(.system(size: 15, weight: .semibold))
-                                .foregroundColor(.white)
-                                .frame(width: 34, height: 34)
-                                .background(RoundedRectangle(cornerRadius: 9).fill(Color.appOrange))
-                            VStack(alignment: .leading, spacing: 3) {
-                                Text(row.str("udid")).font(.system(.subheadline, design: .monospaced))
-                                Text("\(row.str("identity")) · 异常 \(row.str("count")) 次")
-                                    .font(.caption).foregroundColor(.secondary)
+                            Button {
+                                editingRow = row
+                            } label: {
+                                HStack(spacing: 12) {
+                                    Image(systemName: "exclamationmark.triangle.fill")
+                                        .font(.system(size: 15, weight: .semibold))
+                                        .foregroundColor(.white)
+                                        .frame(width: 34, height: 34)
+                                        .background(RoundedRectangle(cornerRadius: 9).fill(Color.appOrange))
+                                    VStack(alignment: .leading, spacing: 3) {
+                                        Text(row.str("udid"))
+                                            .font(.system(.subheadline, design: .monospaced))
+                                            .foregroundColor(.primary)
+                                        Text("\(row.str("identity")) · 异常 \(row.str("count")) 次")
+                                            .font(.caption).foregroundColor(.secondary)
+                                    }
+                                    Spacer(minLength: 0)
+                                }
+                                .contentShape(Rectangle())
                             }
-                            Spacer()
-                            Button("拉黑") { Task { await black(row.id) } }
+                            .buttonStyle(.plain)
+                            Button("拉黑") { pendingBlack = row }
                                 .font(.caption.weight(.semibold))
                                 .buttonStyle(.bordered)
                                 .tint(.appRed)
+                                .disabled(blacking)
                         }
-                        .contentShape(Rectangle())
-                        .onTapGesture { editingRow = row }
                     }
                     .onDelete(perform: deleteRows)
                 }
                 .listStyle(.insetGrouped)
                 .refreshable { await load() }
+                // Web 端「拉黑」按钮带「是否拉黑？」确认
+                .confirmationDialog("是否拉黑？",
+                                    isPresented: Binding(get: { pendingBlack != nil },
+                                                         set: { if !$0 { pendingBlack = nil } }),
+                                    titleVisibility: .visible) {
+                    Button("拉黑", role: .destructive) {
+                        if let r = pendingBlack { Task { await black(r.id) } }
+                    }
+                    Button("取消", role: .cancel) { pendingBlack = nil }
+                } message: {
+                    Text(pendingBlack.map { "将 \($0.str("udid")) 加入黑名单，并从异常监控移除" } ?? "")
+                }
             }
         }
         .overlay(alignment: .top) { ToastBanner(feedback: banner) }
@@ -260,16 +293,25 @@ private struct MonitorListView: View {
         }
     }
 
+    // 后端 Monitor::black() 用 $this->request->request('ids') 取参（等价 $_REQUEST），
+    // 路径形式 monitor/black/ids/5 取不到 ids，会直接返回「参数错误」；
+    // Web 后台前端调用的就是 monitor/black?ids=N，这里保持一致。
     private func black(_ id: Int) async {
         guard let api = state.api else { return }
-        if let data = try? await api.getRaw(path: "monitor/black/ids/\(id)") {
+        blacking = true
+        defer { blacking = false }
+        do {
+            let data = try await api.getRaw(path: "monitor/black?ids=\(id)")
             switch ResponseParser.result(from: data) {
             case .success(let msg):
+                pendingBlack = nil
                 await load()
-                showBanner(Feedback.success(msg))
+                showBanner(Feedback.success("\(msg)：已拉黑并移出监控"))
             case .failure(let e):
                 showBanner(Feedback.failure(e.message))
             }
+        } catch {
+            showBanner(Feedback.failure("请求失败：\(error.localizedDescription)"))
         }
     }
 
@@ -306,11 +348,21 @@ private struct MonitorListView: View {
         }
     }
 
+    // 左滑删除（Web 后台 monitor/del?ids=N）
     private func deleteRows(at offsets: IndexSet) {
         guard let first = offsets.map({ rows[$0].id }).first, let api = state.api else { return }
         Task {
-            if let data = try? await api.getRaw(path: "monitor/del/ids/\(first)") {
-                if case .success = ResponseParser.result(from: data) { await load() }
+            do {
+                let data = try await api.getRaw(path: "monitor/del/ids/\(first)")
+                switch ResponseParser.result(from: data) {
+                case .success(let msg):
+                    await load()
+                    showBanner(Feedback.success("\(msg)：已删除该监控记录"))
+                case .failure(let e):
+                    showBanner(Feedback.failure(e.message))
+                }
+            } catch {
+                showBanner(Feedback.failure("删除失败：\(error.localizedDescription)"))
             }
         }
     }
