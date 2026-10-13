@@ -1,0 +1,395 @@
+Command line invocation:
+    /Applications/Xcode_26.6.app/Contents/Developer/usr/bin/xcodebuild -project YoutaoAdmin.xcodeproj -scheme YoutaoAdmin -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY=
+
+Build settings from command line:
+    CODE_SIGN_IDENTITY = 
+    CODE_SIGNING_ALLOWED = NO
+    CODE_SIGNING_REQUIRED = NO
+    SDKROOT = iphoneos26.5
+
+2026-10-13 01:13:11.764 xcodebuild[3070:13869] [MT] IDERunDestination: Supported platforms for the buildables in the current scheme is empty.
+--- xcodebuild: WARNING: Using the first of multiple matching destinations:
+{ platform:iOS, id:dvtdevice-DVTiPhonePlaceholder-iphoneos:placeholder, name:Any iOS Device }
+{ platform:macOS, arch:arm64, variant:Designed for [iPad,iPhone], id:ce5fc8aa675107fbfa07cd2d0a6a97b1482a5898, name:My Mac }
+{ platform:iOS Simulator, id:dvtdevice-DVTiOSDeviceSimulatorPlaceholder-iphonesimulator:placeholder, name:Any iOS Simulator Device }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:3F853DC5-005E-4601-ACD8-6DADCBC2DEBC, OS:26.2, name:Apple Vision Pro }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:BEBDC056-2028-499A-A128-A4346BD64217, OS:26.4.1, name:Apple Vision Pro }
+{ platform:visionOS Simulator, arch:arm64, variant:Designed for [iPad,iPhone], id:70D84F7E-3446-4AFC-82DC-7AC727F31257, OS:26.5, name:Apple Vision Pro }
+{ platform:iOS Simulator, arch:arm64, id:FA28F45E-187C-4D8F-B9A6-B6DF706CBD1D, OS:26.2, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:FA28F45E-187C-4D8F-B9A6-B6DF706CBD1D, OS:26.2, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:7AAAEF7F-4ABB-416E-A374-4E08CAF6D297, OS:26.4.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:7AAAEF7F-4ABB-416E-A374-4E08CAF6D297, OS:26.4.1, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:87CFFFAE-2BAE-496D-9B2D-3249B9B4CFBA, OS:26.5, name:iPad (A16) }
+{ platform:iOS Simulator, arch:x86_64, id:87CFFFAE-2BAE-496D-9B2D-3249B9B4CFBA, OS:26.5, name:iPad (A16) }
+{ platform:iOS Simulator, arch:arm64, id:EB7D7CC3-7982-4506-A383-843BB8467C05, OS:26.2, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:EB7D7CC3-7982-4506-A383-843BB8467C05, OS:26.2, name:iPad Air 11-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:7F4AB63A-79BC-4B39-9021-1CB5F457C601, OS:26.4.1, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:7F4AB63A-79BC-4B39-9021-1CB5F457C601, OS:26.4.1, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:CD273885-3D56-471B-AD88-07FFF01EA675, OS:26.5, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:CD273885-3D56-471B-AD88-07FFF01EA675, OS:26.5, name:iPad Air 11-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:CD71493D-5602-4D0A-9D2C-91766B2BFF81, OS:26.2, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:x86_64, id:CD71493D-5602-4D0A-9D2C-91766B2BFF81, OS:26.2, name:iPad Air 13-inch (M3) }
+{ platform:iOS Simulator, arch:arm64, id:276D9B17-03F8-4009-9233-0AC491CF464F, OS:26.4.1, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:276D9B17-03F8-4009-9233-0AC491CF464F, OS:26.4.1, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:2390FFDB-6478-4BAD-8541-4DAD346BEF11, OS:26.5, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:x86_64, id:2390FFDB-6478-4BAD-8541-4DAD346BEF11, OS:26.5, name:iPad Air 13-inch (M4) }
+{ platform:iOS Simulator, arch:arm64, id:A30A2DD1-DB1C-4D3B-9B8B-B422C02CC2CF, OS:26.2, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:A30A2DD1-DB1C-4D3B-9B8B-B422C02CC2CF, OS:26.2, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:6A1D88F3-F58D-43EC-A7DB-764E2EFD4814, OS:26.4.1, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:6A1D88F3-F58D-43EC-A7DB-764E2EFD4814, OS:26.4.1, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:468B2CC0-4D14-42A4-A7FB-B750EF6E38D1, OS:26.5, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:468B2CC0-4D14-42A4-A7FB-B750EF6E38D1, OS:26.5, name:iPad Pro 11-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:34A60270-E8F0-4906-B0EC-34347C86EBAF, OS:26.2, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:34A60270-E8F0-4906-B0EC-34347C86EBAF, OS:26.2, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:B385244C-CB83-424B-92FD-32C1867E3F14, OS:26.4.1, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:B385244C-CB83-424B-92FD-32C1867E3F14, OS:26.4.1, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:A2011F14-88A1-46AA-999A-FD6FEDCD870B, OS:26.5, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:x86_64, id:A2011F14-88A1-46AA-999A-FD6FEDCD870B, OS:26.5, name:iPad Pro 13-inch (M5) }
+{ platform:iOS Simulator, arch:arm64, id:20D070A5-D498-4E2F-BAE9-4A54D5F77DBB, OS:26.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:20D070A5-D498-4E2F-BAE9-4A54D5F77DBB, OS:26.2, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:14DA5CF4-2301-414C-B814-97478EBD9560, OS:26.4.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:14DA5CF4-2301-414C-B814-97478EBD9560, OS:26.4.1, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:1E926EE8-2A0B-4C47-B835-0C52B77DE728, OS:26.5, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:x86_64, id:1E926EE8-2A0B-4C47-B835-0C52B77DE728, OS:26.5, name:iPad mini (A17 Pro) }
+{ platform:iOS Simulator, arch:arm64, id:A3615395-EDA9-4A60-982A-D428BCC5719B, OS:26.2, name:iPhone 16e }
+{ platform:iOS Simulator, arch:x86_64, id:A3615395-EDA9-4A60-982A-D428BCC5719B, OS:26.2, name:iPhone 16e }
+{ platform:iOS Simulator, arch:arm64, id:25B395EC-01B8-4FB6-8D2A-1C484C360481, OS:26.2, name:iPhone 17 }
+{ platform:iOS Simulator, arch:x86_64, id:25B395EC-01B8-4FB6-8D2A-1C484C360481, OS:26.2, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:7D16E67F-1E34-43CB-BD36-B95CCE24981A, OS:26.4.1, name:iPhone 17 }
+{ platform:iOS Simulator, arch:x86_64, id:7D16E67F-1E34-43CB-BD36-B95CCE24981A, OS:26.4.1, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:88931AEA-62E6-447F-8697-DCE00A671384, OS:26.5, name:iPhone 17 }
+{ platform:iOS Simulator, arch:x86_64, id:88931AEA-62E6-447F-8697-DCE00A671384, OS:26.5, name:iPhone 17 }
+{ platform:iOS Simulator, arch:arm64, id:5FEB61C5-E3F5-471D-AE23-8A07438D5E92, OS:26.2, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:5FEB61C5-E3F5-471D-AE23-8A07438D5E92, OS:26.2, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:4E3A6BB3-F417-4829-8DF5-0EA652541F40, OS:26.4.1, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:4E3A6BB3-F417-4829-8DF5-0EA652541F40, OS:26.4.1, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:22452A91-4697-4369-8812-53ADB77EB73B, OS:26.5, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:x86_64, id:22452A91-4697-4369-8812-53ADB77EB73B, OS:26.5, name:iPhone 17 Pro }
+{ platform:iOS Simulator, arch:arm64, id:BA9128D4-18C1-4D81-8EB6-C9DEA307B16B, OS:26.2, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:BA9128D4-18C1-4D81-8EB6-C9DEA307B16B, OS:26.2, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:E3357B30-270D-49D5-87E0-79A796ACE8A3, OS:26.4.1, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:E3357B30-270D-49D5-87E0-79A796ACE8A3, OS:26.4.1, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:841190F6-F927-4F0D-B152-62A06B4040CA, OS:26.5, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:x86_64, id:841190F6-F927-4F0D-B152-62A06B4040CA, OS:26.5, name:iPhone 17 Pro Max }
+{ platform:iOS Simulator, arch:arm64, id:B8094BA5-47C4-4A9C-B87E-C73669585F82, OS:26.4.1, name:iPhone 17e }
+{ platform:iOS Simulator, arch:x86_64, id:B8094BA5-47C4-4A9C-B87E-C73669585F82, OS:26.4.1, name:iPhone 17e }
+{ platform:iOS Simulator, arch:arm64, id:DF686390-8E1F-46B8-A4D9-883644620714, OS:26.5, name:iPhone 17e }
+{ platform:iOS Simulator, arch:x86_64, id:DF686390-8E1F-46B8-A4D9-883644620714, OS:26.5, name:iPhone 17e }
+{ platform:iOS Simulator, arch:arm64, id:A1194899-F789-4C4B-A9E2-EFDC6C72EB35, OS:26.2, name:iPhone Air }
+{ platform:iOS Simulator, arch:x86_64, id:A1194899-F789-4C4B-A9E2-EFDC6C72EB35, OS:26.2, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:3679014C-ECDC-4161-96E5-69B96F640760, OS:26.4.1, name:iPhone Air }
+{ platform:iOS Simulator, arch:x86_64, id:3679014C-ECDC-4161-96E5-69B96F640760, OS:26.4.1, name:iPhone Air }
+{ platform:iOS Simulator, arch:arm64, id:CB15797E-6053-40B1-BB72-7F30D005A4F2, OS:26.5, name:iPhone Air }
+{ platform:iOS Simulator, arch:x86_64, id:CB15797E-6053-40B1-BB72-7F30D005A4F2, OS:26.5, name:iPhone Air }
+note: Using codesigning identity override: 
+ComputePackagePrebuildTargetDependencyGraph
+
+Prepare packages
+
+CreateBuildRequest
+
+SendProjectDescription
+
+CreateBuildOperation
+
+ComputeTargetDependencyGraph
+note: Building targets in dependency order
+note: Target dependency graph (1 target)
+    Target 'YoutaoAdmin' in project 'YoutaoAdmin' (no dependencies)
+
+GatherProvisioningInputs
+
+CreateBuildDescription
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -x c -c /dev/null
+
+ExecuteExternalTool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+
+Build description signature: 670af87ced9529cd0637484bb1095f5f
+Build description path: /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/XCBuildData/670af87ced9529cd0637484bb1095f5f.xcbuilddata
+ClangStatCache /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -o /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache
+
+CreateBuildDirectory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    builtin-create-build-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products
+
+CreateBuildDirectory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    builtin-create-build-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin-4b39d3883d1856b4e261e665c360a21e-VFS-iphoneos/all-product-headers.yaml
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin-4b39d3883d1856b4e261e665c360a21e-VFS-iphoneos/all-product-headers.yaml
+
+CreateBuildDirectory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    builtin-create-build-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos
+
+CreateBuildDirectory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    builtin-create-build-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/ExplicitPrecompiledModules
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    builtin-create-build-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/ExplicitPrecompiledModules
+
+CreateBuildDirectory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin/YoutaoAdmin.xcodeproj
+    builtin-create-build-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.hmap (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.hmap
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.DependencyStaticMetadataFileList (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.DependencyStaticMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.DependencyMetadataFileList (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.DependencyMetadataFileList
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-project-headers.hmap (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-project-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-own-target-headers.hmap (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-own-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-generated-files.hmap (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-generated-files.hmap
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-all-target-headers.hmap (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-all-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-all-non-framework-target-headers.hmap (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-all-non-framework-target-headers.hmap
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_const_extract_protocols.json (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_const_extract_protocols.json
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftFileList (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftFileList
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftConstValuesFileList (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftConstValuesFileList
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.LinkFileList (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.LinkFileList
+
+WriteAuxiliaryFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-OutputFileMap.json (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    write-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-OutputFileMap.json
+
+MkDir /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    /bin/mkdir -p /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app
+
+ProcessInfoPlistFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Info.plist /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Info.plist (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-infoPlistUtility /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Info.plist -producttype com.apple.product-type.application -genpkginfo /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/PkgInfo -expandbuildsettings -format binary -platform iphoneos -requiredArchitecture arm64 -o /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Info.plist
+
+SwiftDriver YoutaoAdmin normal arm64 com.apple.xcode.tools.swift.compiler (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-SwiftDriver -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name YoutaoAdmin -O -whole-module-optimization @/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -target arm64-apple-ios15.0 -g -module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -F /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -output-file-map /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-generated-files.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-own-target-headers.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-project-headers.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-Swift.h -working-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin -no-emit-module-separately-wmo
+
+SwiftDriver\ Compilation YoutaoAdmin normal arm64 com.apple.xcode.tools.swift.compiler (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-Swift-Compilation -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name YoutaoAdmin -O -whole-module-optimization @/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -target arm64-apple-ios15.0 -g -module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -F /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -output-file-map /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-generated-files.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-own-target-headers.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-project-headers.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-Swift.h -working-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin -no-emit-module-separately-wmo
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdarg-ANSA6OE4Q09PKHDQIZ1EHM0MZ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stddef-B5JXG0U7JQGXP382M6OGJJ56Z.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_SwiftConcurrencyShims-1QIGYCS7LF2TDYCLUNLDKL2YB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ptrcheck-BWOTI24EPM62JVUJRDBI7BR92.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ptrauth-4IYKKN05SKIQP7F9E83VAYUL2.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/SwiftShims-4CPVGZVRQ5YQQR5PV35LTJ241.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_float-DH2KGKXJNE6SUHUM2QT47Q2S9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/DeveloperToolsSupport-7V183FQRVY6JDR52YV8QSXLZT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdbool-12VZ9Q0PJNPZSA7IP7BUIAC06.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_AvailabilityInternal-4IDSZ4KPQBD57BRL63JL9K9OQ.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_DarwinFoundation1-8ZZ5158C3CZ6SR6THJCMCZE9V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_limits-8GT0QVM91QBOVTBYGYDJ01ZLE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_DarwinFoundation2-265W636QKMHF5U82I7SQ4ICMG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/sys_types-ATHNKNEMK8SDG1JIM8Q8THCKM.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdint-BU4PHFBDWZ6Y6V2ANJN69HBLG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_tgmath-F4M3BB5K7BB7JT6WA09W00D1N.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_DarwinFoundation3-55LH2B8UU8E1IGGHZTM2D11J8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_intrinsics-4L4C4289PFEY4AP7JWTB80DKN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdatomic-2Z9TZTU92A29BYCU7VN00JHR4.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_inttypes-D1A3KUVNH1F56940OAYRT6NR7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Darwin-D5H0PQ1OOXR18Z43VCFZ7SV3M.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/simd-42M1PT4U98I1N7ESKH7ZT25VU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/MachO-8OVBKUZWMDFXPCC5GZJHG2NDE.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ObjectiveC-17SMUURH8DS3T2AUFBLG8C2SX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/os_object-3NWB2BYC8A7W4P3NGO8NU3JNI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/os_workgroup-EAO612YJGOJ16T4CNTT7UI7YK.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Dispatch-5VKVN9M645CF7UWJUYKMET33K.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Spatial-ZFMNFPE44E98NUQBRZDJJ3K8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreFoundation-W3357P8FHDMEI6ZM0G3W6D6V.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/XPC-ERPI628HJ6GDRSMBFE5XLH.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/os-AQLAE2WLTZOW5IA1WDIW38PG6.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CFNetwork-DM645AIUK96R434AUUXW8BIL7.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Security-33ZL37EMBIUKCX5BPGA46A71B.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreGraphics-6Q5NAPY4JET7A3RRBFM2OC9GN.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Foundation-6620JXCPC9EF3VIIKMWV6042C.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ImageIO-7XKL2TTG95RZSWSXEUX2WGHZU.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreText-E22GSPGG61ZNYTMY87RMKZEGG.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/FileProvider-6Z6TNDUHWS55EQHRFRAMH5H4H.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Symbols-6U9696QHDWJYNT0434DZ286VI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/DataDetection-BGM90GET1CO673MC9SEI16HFT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreTransferable-C7SXOMR7E59BTZDQW8MW0ASUD.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UniformTypeIdentifiers-ETW44A40LE3SY0UFWGDGEFGPX.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreData-3LKGCC6E0L9FHGRE5M2MYBLH8.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/OSLog-1UY1B0F02AO4RTH5PQZQHJAWR.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UserNotifications-7V7A0VR3N0MOCJB8YTLATM73G.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Accessibility-5AILJM4Y5JT9QT1J21W7GW73P.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UIUtilities-AUB27G3F79WQDE35WURQY4FQ9.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/IOSurface-BZESM5V8AGUUJWMNKGL5GR37.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Metal-90NPTYQUOFPRM2KYCC3A17ONT.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/OpenGLES-34D6RYX7IG93F51WQUO2VK7MB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreVideo-2DMPNJ4LMM59PGHU062EIMV7R.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/QuartzCore-61P1AZS260KY2HZ3FCGM6E8MS.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreImage-5RSQBOGUO4AI6EBGY7QSS1QI.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/SwiftUICore-2F8UHG99S3MCGF435Q7CCBOVB.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UIKit-6MW9Y37QYID3KCUPXA7HX2S1O.pcm
+
+SwiftExplicitDependencyGeneratePcm arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/SwiftUI-5QBNC5CTKOL8AWX3H0BHFZW8Q.pcm
+
+SwiftCompile normal arm64 Compiling\ APIClient.swift,\ AddonView.swift,\ AdminLogView.swift,\ AdminView.swift,\ AppState.swift,\ CategoryView.swift,\ ConfigView.swift,\ FormKit.swift,\ GenericListView.swift,\ HTMLUtil.swift,\ KamiView.swift,\ LoginView.swift,\ MainTabView.swift,\ Models.swift,\ ModuleViews.swift,\ ProfileView.swift,\ SecurityView.swift,\ ServerConfig.swift,\ SetupView.swift,\ SystemView.swift,\ Theme.swift,\ UserView.swift,\ YoutaoAdminApp.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/APIClient.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/AddonView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/AdminLogView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/AdminView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/AppState.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/CategoryView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/ConfigView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/FormKit.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/GenericListView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/HTMLUtil.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/KamiView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/LoginView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/MainTabView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/Models.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/ModuleViews.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/ProfileView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/SecurityView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/ServerConfig.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/SetupView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/SystemView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/Theme.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/UserView.swift /Users/runner/work/YoutaoAdmin/YoutaoAdmin/Sources/YoutaoAdminApp.swift /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_StringProcessing.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Symbols.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/UIKit.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Darwin.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/System.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Accessibility.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/simd.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_Builtin_float.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreVideo.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/SwiftUI.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Observation.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Metal.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreFoundation.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Foundation.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/SwiftUICore.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/XPC.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/UniformTypeIdentifiers.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_DarwinFoundation1.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/ObjectiveC.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreImage.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreText.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/DeveloperToolsSupport.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreGraphics.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/DataDetection.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_DarwinFoundation2.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreData.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Dispatch.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/CoreTransferable.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/os.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Swift.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/OSLog.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_DarwinFoundation3.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Spatial.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/QuartzCore.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/Combine.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/FileProvider.swiftmodule/arm64e-apple-ios.swiftmodule /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/prebuilt-modules/26.5/_Concurrency.swiftmodule/arm64e-apple-ios.swiftmodule /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UniformTypeIdentifiers-ETW44A40LE3SY0UFWGDGEFGPX.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdint-BU4PHFBDWZ6Y6V2ANJN69HBLG.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/sys_types-ATHNKNEMK8SDG1JIM8Q8THCKM.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/os_workgroup-EAO612YJGOJ16T4CNTT7UI7YK.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/MachO-8OVBKUZWMDFXPCC5GZJHG2NDE.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreGraphics-6Q5NAPY4JET7A3RRBFM2OC9GN.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_tgmath-F4M3BB5K7BB7JT6WA09W00D1N.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdatomic-2Z9TZTU92A29BYCU7VN00JHR4.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/os_object-3NWB2BYC8A7W4P3NGO8NU3JNI.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_float-DH2KGKXJNE6SUHUM2QT47Q2S9.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stddef-B5JXG0U7JQGXP382M6OGJJ56Z.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/simd-42M1PT4U98I1N7ESKH7ZT25VU.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UserNotifications-7V7A0VR3N0MOCJB8YTLATM73G.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/SwiftUI-5QBNC5CTKOL8AWX3H0BHFZW8Q.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ObjectiveC-17SMUURH8DS3T2AUFBLG8C2SX.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Spatial-ZFMNFPE44E98NUQBRZDJJ3K8.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_DarwinFoundation2-265W636QKMHF5U82I7SQ4ICMG.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreFoundation-W3357P8FHDMEI6ZM0G3W6D6V.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/DataDetection-BGM90GET1CO673MC9SEI16HFT.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/SwiftShims-4CPVGZVRQ5YQQR5PV35LTJ241.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CFNetwork-DM645AIUK96R434AUUXW8BIL7.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_inttypes-D1A3KUVNH1F56940OAYRT6NR7.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/SwiftUICore-2F8UHG99S3MCGF435Q7CCBOVB.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ImageIO-7XKL2TTG95RZSWSXEUX2WGHZU.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreText-E22GSPGG61ZNYTMY87RMKZEGG.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ptrcheck-BWOTI24EPM62JVUJRDBI7BR92.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreTransferable-C7SXOMR7E59BTZDQW8MW0ASUD.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/QuartzCore-61P1AZS260KY2HZ3FCGM6E8MS.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_DarwinFoundation3-55LH2B8UU8E1IGGHZTM2D11J8.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Darwin-D5H0PQ1OOXR18Z43VCFZ7SV3M.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/XPC-ERPI628HJ6GDRSMBFE5XLH.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdbool-12VZ9Q0PJNPZSA7IP7BUIAC06.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Accessibility-5AILJM4Y5JT9QT1J21W7GW73P.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreImage-5RSQBOGUO4AI6EBGY7QSS1QI.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreVideo-2DMPNJ4LMM59PGHU062EIMV7R.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/ptrauth-4IYKKN05SKIQP7F9E83VAYUL2.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_DarwinFoundation1-8ZZ5158C3CZ6SR6THJCMCZE9V.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_SwiftConcurrencyShims-1QIGYCS7LF2TDYCLUNLDKL2YB.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Metal-90NPTYQUOFPRM2KYCC3A17ONT.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_AvailabilityInternal-4IDSZ4KPQBD57BRL63JL9K9OQ.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UIUtilities-AUB27G3F79WQDE35WURQY4FQ9.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/OpenGLES-34D6RYX7IG93F51WQUO2VK7MB.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Symbols-6U9696QHDWJYNT0434DZ286VI.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/UIKit-6MW9Y37QYID3KCUPXA7HX2S1O.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/os-AQLAE2WLTZOW5IA1WDIW38PG6.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/OSLog-1UY1B0F02AO4RTH5PQZQHJAWR.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/CoreData-3LKGCC6E0L9FHGRE5M2MYBLH8.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Dispatch-5VKVN9M645CF7UWJUYKMET33K.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_stdarg-ANSA6OE4Q09PKHDQIZ1EHM0MZ.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/DeveloperToolsSupport-7V183FQRVY6JDR52YV8QSXLZT.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/FileProvider-6Z6TNDUHWS55EQHRFRAMH5H4H.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/IOSurface-BZESM5V8AGUUJWMNKGL5GR37.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_intrinsics-4L4C4289PFEY4AP7JWTB80DKN.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Security-33ZL37EMBIUKCX5BPGA46A71B.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Foundation-6620JXCPC9EF3VIIKMWV6042C.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/_Builtin_limits-8GT0QVM91QBOVTBYGYDJ01ZLE.pcm /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-dependencies-1.json (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+
+CompileSwift normal arm64 (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    
+
+SwiftDriverJobDiscovery normal arm64 Compiling APIClient.swift, AddonView.swift, AdminLogView.swift, AdminView.swift, AppState.swift, CategoryView.swift, ConfigView.swift, FormKit.swift, GenericListView.swift, HTMLUtil.swift, KamiView.swift, LoginView.swift, MainTabView.swift, Models.swift, ModuleViews.swift, ProfileView.swift, SecurityView.swift, ServerConfig.swift, SetupView.swift, SystemView.swift, Theme.swift, UserView.swift, YoutaoAdminApp.swift (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+
+SwiftDriver\ Compilation\ Requirements YoutaoAdmin normal arm64 com.apple.xcode.tools.swift.compiler (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-Swift-Compilation-Requirements -- /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc -module-name YoutaoAdmin -O -whole-module-optimization @/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftFileList -enable-bare-slash-regex -enable-experimental-feature DebugDescriptionMacro -sdk /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -target arm64-apple-ios15.0 -g -module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -Xfrontend -serialize-debugging-options -swift-version 5 -I /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -F /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -c -num-threads 3 -Xcc -ivfsstatcache -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/SDKStatCaches.noindex/iphoneos26.5-23F81a-688ef53f1462e2c8f657fdc38a81448fee66e23052a0157c865c76b268046726.sdkstatcache -output-file-map /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-OutputFileMap.json -use-frontend-parseable-output -save-temps -no-color-diagnostics -explicit-module-build -module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules -clang-scanner-module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -sdk-module-cache-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex -serialize-diagnostics -emit-dependencies -emit-module -emit-module-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftmodule -validate-clang-modules-once -clang-build-session-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/ModuleCache.noindex/Session.modulevalidation -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/swift-overrides.hmap -emit-const-values -Xfrontend -const-gather-protocols-file -Xfrontend /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_const_extract_protocols.json -Xcc -iquote -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-generated-files.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-own-target-headers.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-all-target-headers.hmap -Xcc -iquote -Xcc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin-project-headers.hmap -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/include -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources-normal/arm64 -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources/arm64 -Xcc -I/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources -emit-objc-header -emit-objc-header-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-Swift.h -working-directory /Users/runner/work/YoutaoAdmin/YoutaoAdmin -no-emit-module-separately-wmo
+
+SwiftMergeGeneratedHeaders /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources/YoutaoAdmin-Swift.h /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-Swift.h (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-swiftHeaderTool -arch arm64 /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-Swift.h -o /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/DerivedSources/YoutaoAdmin-Swift.h
+
+Copy /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/arm64-apple-ios.swiftmodule /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftmodule (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftmodule /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/arm64-apple-ios.swiftmodule
+
+Copy /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/arm64-apple-ios.swiftdoc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftdoc (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftdoc /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/arm64-apple-ios.swiftdoc
+
+Copy /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/arm64-apple-ios.abi.json /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.abi.json (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.abi.json /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/arm64-apple-ios.abi.json
+
+Copy /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftsourceinfo (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks -rename /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftsourceinfo /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo
+
+Ld /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/YoutaoAdmin normal (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -Xlinker -reproducible -target arm64-apple-ios15.0 -isysroot /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk -Os -L/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -L/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -F/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/EagerLinkingTBDs/Release-iphoneos -F/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos -filelist /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.LinkFileList -Xlinker -rpath -Xlinker /usr/lib/swift -Xlinker -rpath -Xlinker @executable_path/Frameworks -Xlinker -dead_strip -Xlinker -object_path_lto -Xlinker /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_lto.o -Xlinker -dependency_info -Xlinker /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_dependency_info.dat -fobjc-link-runtime -L/Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos -L/usr/lib/swift -Xlinker -add_ast_path -Xlinker /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.swiftmodule @/Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin-linker-args.resp -o /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/YoutaoAdmin
+
+CopySwiftLibs /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-swiftStdLibTool --copy --verbose --scan-executable /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/YoutaoAdmin --scan-folder /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Frameworks --scan-folder /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/PlugIns --scan-folder /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/SystemExtensions --scan-folder /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Extensions --platform iphoneos --toolchain /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.3hm7gH/Metal.xctoolchain --toolchain /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain --destination /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Frameworks --strip-bitcode --strip-bitcode-tool /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/bitcode_strip --emit-dependency-info /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/SwiftStdLibToolInputDependencies.dep --filter-for-swift-os --back-deploy-swift-span
+Ignoring --strip-bitcode because --sign was not passed
+
+ExtractAppIntentsMetadata (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsmetadataprocessor --toolchain-dir /var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.3hm7gH/Metal.xctoolchain --module-name YoutaoAdmin --sdk-root /Applications/Xcode_26.6.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.5.sdk --xcode-version 17F113 --platform-family iOS --deployment-target 15.0 --bundle-identifier com.youtao.admin --output /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app --target-triple arm64-apple-ios15.0 --binary-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/YoutaoAdmin --dependency-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin_dependency_info.dat --stringsdata-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/ExtractedAppShortcutsMetadata.stringsdata --source-file-list /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftFileList --metadata-file-list /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.DependencyMetadataFileList --static-metadata-file-list /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.DependencyStaticMetadataFileList --swift-const-vals-list /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/Objects-normal/arm64/YoutaoAdmin.SwiftConstValuesFileList --compile-time-extraction --deployment-aware-processing --validate-assistant-intents --no-app-shortcuts-localization
+2026-10-13 01:13:39.281 appintentsmetadataprocessor[4274:17352] Starting appintentsmetadataprocessor export
+2026-10-13 01:13:39.292 appintentsmetadataprocessor[4274:17352] warning: Metadata extraction skipped. No AppIntents.framework dependency found.
+
+GenerateDSYMFile /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app.dSYM /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/YoutaoAdmin (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/dsymutil /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/YoutaoAdmin -o /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app.dSYM
+
+AppIntentsSSUTraining (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    /Applications/Xcode_26.6.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/appintentsnltrainingprocessor --infoplist-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Info.plist --temp-dir-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/ssu --bundle-id com.youtao.admin --product-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app --extracted-metadata-path /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Metadata.appintents --metadata-file-list /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Intermediates.noindex/YoutaoAdmin.build/Release-iphoneos/YoutaoAdmin.build/YoutaoAdmin.DependencyMetadataFileList --source-file /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app/Info.plist --archive-ssu-assets
+2026-10-13 01:13:39.341 appintentsnltrainingprocessor[4278:17369] Parsing options for appintentsnltrainingprocessor
+2026-10-13 01:13:39.342 appintentsnltrainingprocessor[4278:17369] Starting AppIntents SSU YAML Generation
+2026-10-13 01:13:39.348 appintentsnltrainingprocessor[4278:17369] No AppShortcuts found - Skipping.
+
+RegisterExecutionPolicyException /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-RegisterExecutionPolicyException /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app
+
+Validate /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    builtin-validationUtility /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app -shallow-bundle -infoplist-subpath Info.plist
+
+Touch /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app (in target 'YoutaoAdmin' from project 'YoutaoAdmin')
+    cd /Users/runner/work/YoutaoAdmin/YoutaoAdmin
+    /usr/bin/touch -c /Users/runner/work/YoutaoAdmin/YoutaoAdmin/build/Build/Products/Release-iphoneos/YoutaoAdmin.app
+
+** BUILD SUCCEEDED **
+
