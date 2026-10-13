@@ -8,10 +8,14 @@ struct UserView: View {
     @State private var search = ""
     @State private var editingRow: Row?
     @State private var banner: Feedback?
+    @State private var groups: [FieldOption] = []
 
-    // 对齐 Web 后台 user/user/edit 表单字段
-    static let editFields: [FormField] = [
+    // 对齐 Web 后台 user/user/edit 表单字段（group_id 需要动态分组列表，由 editFields(groups:) 注入）
+    static func editFields(groups: [FieldOption]) -> [FormField] {
+        var fields: [FormField] = [
+        FormField("username", "用户名", required: true, section: "基本资料"),
         FormField("nickname", "昵称", required: true, section: "基本资料"),
+        FormField("password", "密码", kind: .secure, placeholder: "留空表示不修改", section: "基本资料"),
         FormField("email", "邮箱", placeholder: "user@example.com", section: "基本资料"),
         FormField("mobile", "手机号", kind: .number, section: "基本资料"),
         FormField("avatar", "头像地址", section: "基本资料"),
@@ -23,8 +27,19 @@ struct UserView: View {
         FormField("score", "积分", kind: .number, value: "0", section: "等级与资产"),
         FormField("successions", "连续登录天数", kind: .number, value: "0", section: "等级与资产"),
         FormField("maxsuccessions", "最大连续登录", kind: .number, value: "0", section: "等级与资产"),
+        FormField("prevtime", "上次登录时间", placeholder: "YYYY-MM-DD HH:mm:ss", section: "登录统计"),
+        FormField("logintime", "本次登录时间", placeholder: "YYYY-MM-DD HH:mm:ss", section: "登录统计"),
+        FormField("loginip", "登录 IP", section: "登录统计"),
+        FormField("loginfailure", "登录失败次数", kind: .number, value: "0", section: "登录统计"),
+        FormField("joinip", "注册 IP", section: "登录统计"),
+        FormField("jointime", "注册时间", placeholder: "YYYY-MM-DD HH:mm:ss", section: "登录统计"),
         FormField("status", "状态", kind: .options([FieldOption("normal", "正常"), FieldOption("hidden", "隐藏")]), value: "normal", section: "状态")
-    ]
+        ]
+        if !groups.isEmpty {
+            fields.insert(FormField("group_id", "会员组", kind: .options(groups), section: "基本资料"), at: 3)
+        }
+        return fields
+    }
 
     private var filtered: [Row] {
         let kw = search.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -58,7 +73,8 @@ struct UserView: View {
         .task { await load() }
         .sheet(item: $editingRow) { row in
             SpecFormView(title: "编辑会员", path: "user", editingId: row.id,
-                         fields: UserView.editFields, initial: UserView.initial(from: row)) {
+                         fields: UserView.editFields(groups: groups),
+                         initial: UserView.initial(from: row, groups: groups)) {
                 await load()
                 banner = Feedback.success("已保存 @\(row.str("username")) 的资料")
             }
@@ -66,10 +82,16 @@ struct UserView: View {
         }
     }
 
-    static func initial(from row: Row) -> [String: String] {
+    static func initial(from row: Row, groups: [FieldOption] = []) -> [String: String] {
         var d = row.stringDict
         if (d["gender"] ?? "").isEmpty { d["gender"] = "2" }
         if (d["status"] ?? "").isEmpty { d["status"] = "normal" }
+        if (d["loginfailure"] ?? "").isEmpty { d["loginfailure"] = "0" }
+        if (d["group_id"] ?? "").isEmpty, let first = groups.first { d["group_id"] = first.value }
+        for k in ["prevtime", "logintime", "jointime"] {
+            let t = row.str(k + "_text")
+            if !t.isEmpty { d[k] = t }
+        }
         return d
     }
 
@@ -77,6 +99,11 @@ struct UserView: View {
         isLoading = true
         defer { isLoading = false }
         guard let api = state.api else { return }
+        if groups.isEmpty,
+           let data = try? await api.getRaw(path: "user/group/index?offset=0&limit=500"),
+           let list = ResponseParser.list(from: data) {
+            groups = list.rows.map { FieldOption(String($0.id), $0.str("name")) }
+        }
         if let data = try? await api.getRaw(path: "user/index?offset=0&limit=500"),
            let list = ResponseParser.list(from: data) {
             rows = list.rows; total = list.total
