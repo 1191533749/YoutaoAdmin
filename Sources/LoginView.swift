@@ -106,9 +106,14 @@ struct LoginView: View {
             let html = String(data: try await api.getRaw(path: "index/login"), encoding: .utf8) ?? ""
             token = ResponseParser.token(from: html) ?? ""
             if let src = ResponseParser.captchaURL(from: html) {
-                let full = resolveCaptcha(src)
-                captchaBaseURL = full
-                await fetchCaptcha(full)
+                captchaBaseURL = resolveCaptcha(src)
+            } else {
+                // 兜底：本站验证码固定由前端入口输出（实测 /index.php?s=/captcha 返回 PNG）
+                captchaBaseURL = resolveCaptcha("/index.php?s=/captcha")
+            }
+            await fetchCaptcha(captchaBaseURL)
+            if token.isEmpty {
+                errorMessage = "未获取到表单令牌（__token__），请点验证码区域刷新或检查服务器地址"
             }
         } catch {
             errorMessage = "加载登录页失败：\(error.localizedDescription)"
@@ -123,7 +128,9 @@ struct LoginView: View {
     }
 
     private func refreshCaptcha() async {
-        guard !captchaBaseURL.isEmpty else { return }
+        if captchaBaseURL.isEmpty {
+            captchaBaseURL = resolveCaptcha("/index.php?s=/captcha")
+        }
         let url = captchaBaseURL + "&r=\(Int.random(in: 100000...999999))"
         await fetchCaptcha(url)
     }
@@ -158,7 +165,13 @@ struct LoginView: View {
             case .failure(let e):
                 errorMessage = e.message
                 captchaText = ""
-                await loadLoginPage()
+                // 令牌与验证码都是一次性的：用后端刚下发的新令牌重试，并换一张验证码
+                if let fresh = ResponseParser.freshToken(from: data) {
+                    token = fresh
+                    await refreshCaptcha()
+                } else {
+                    await loadLoginPage()
+                }
             }
         } catch {
             errorMessage = "登录失败：\(error.localizedDescription)"

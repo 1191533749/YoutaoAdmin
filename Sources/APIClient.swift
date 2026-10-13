@@ -40,7 +40,26 @@ final class APIClient {
             req.httpBody = body.data(using: .utf8)
         }
         let (data, _) = try await URLSession.shared.data(for: req)
-        return data
+        return Self.unwrapJSONWrappedHTML(data)
+    }
+
+    /// 本站点对带 X-Requested-With 的请求会把 HTML 页面用 json_encode 包成一个 JSON 字符串返回
+    /// （Content-Type: application/json，响应体形如 "\"<!DOCTYPE html>\\n<html lang=\\\"zh-cn\\\">..."）。
+    /// 因此登录页 __token__、验证码图片 URL、设置/资料/add-edit 表单的隐藏字段全都解析不到，
+    /// 表现为登录报「__token__不能为空」、验证码不出图、表单页空白。
+    /// 这里统一解包，让下游所有 HTML 解析逻辑拿到原始页面。
+    static func unwrapJSONWrappedHTML(_ data: Data) -> Data {
+        var body = data
+        let head = [UInt8](body.prefix(3))
+        if head.count == 3, head[0] == 0xEF, head[1] == 0xBB, head[2] == 0xBF {
+            body = body.dropFirst(3)
+        }
+        guard body.first == 0x22, // '"'
+              let obj = try? JSONSerialization.jsonObject(with: body, options: [.fragmentsAllowed]),
+              let text = obj as? String,
+              text.contains("<") || text.contains("__token__"),
+              let unwrapped = text.data(using: .utf8) else { return data }
+        return unwrapped
     }
 
     func getRaw(path: String) async throws -> Data {
@@ -84,6 +103,16 @@ enum ResponseParser {
             return .success(raw.isEmpty ? "操作成功" : raw)
         }
         return .failure(APIError(message: raw.isEmpty ? "操作失败" : raw))
+    }
+
+    /// FastAdmin 每次校验令牌后都会作废旧令牌，并把新令牌放在响应 data.token 里，
+    /// 客户端必须用它来重试，否则下一次提交会报「令牌验证失败」。
+    static func freshToken(from data: Data) -> String? {
+        guard let obj = jsonObject(data),
+              let d = obj["data"] as? [String: Any],
+              let t = d["token"] as? String,
+              !t.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { return nil }
+        return t
     }
 
     static func isLoggedIn(_ data: Data) -> Bool {
