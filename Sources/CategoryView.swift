@@ -40,11 +40,11 @@ struct CategoryView: View {
                     }
                     .listStyle(.insetGrouped)
                     .refreshable { await load() }
-                    .searchable(text: $keyword, prompt: "搜索应用名称 / 版本号")
+                    .searchable(text: $keyword, prompt: "搜索商品名称 / 版本号")
                 }
             }
             .overlay(alignment: .top) { ToastBanner(feedback: banner) }
-            .navigationTitle("应用管理（共 \(total)）")
+            .navigationTitle("商品管理（共 \(total)）")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -53,13 +53,13 @@ struct CategoryView: View {
             }
             .task { await load() }
             .sheet(isPresented: $showAdd) {
-                SpecFormView(title: "添加应用", path: "category",
+                SpecFormView(title: "添加商品", path: "category",
                              fields: Self.fields,
                              initial: Self.addDefaults) { await load() }
                     .environmentObject(state)
             }
             .sheet(item: $editingRow) { row in
-                SpecFormView(title: "编辑应用", path: "category", editingId: row.id,
+                SpecFormView(title: "编辑商品", path: "category", editingId: row.id,
                              fields: Self.fields,
                              initial: Self.initial(from: row)) { await load() }
                     .environmentObject(state)

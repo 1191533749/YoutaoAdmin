@@ -26,7 +26,7 @@ struct AuthRuleView: View {
     static let fields: [FormField] = [
         FormField("ismenu", "是否菜单", kind: .options([FieldOption("1", "是"), FieldOption("0", "否")]), value: "1", section: "规则"),
         FormField("pid", "父级 ID", kind: .number, required: true, value: "0", section: "规则"),
-        FormField("name", "规则名称", required: true, placeholder: "如 category/index", section: "规则"),
+        FormField("name", "规则名称", placeholder: "如 category/index", required: true, section: "规则"),
         FormField("title", "标题", required: true, section: "规则"),
         FormField("icon", "图标", placeholder: "如 fa fa-list", section: "规则"),
         FormField("weigh", "权重", kind: .number, value: "0", section: "规则"),

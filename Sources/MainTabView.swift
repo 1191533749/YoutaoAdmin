@@ -12,7 +12,7 @@ struct MainTabView: View {
             SecurityView()
                 .tabItem { Label("安全", systemImage: "shield.fill") }
             CategoryView()
-                .tabItem { Label("分类", systemImage: "square.stack.3d.up.fill") }
+                .tabItem { Label("商品", systemImage: "square.stack.3d.up.fill") }
             SystemView()
                 .tabItem { Label("系统", systemImage: "gearshape.fill") }
         }
