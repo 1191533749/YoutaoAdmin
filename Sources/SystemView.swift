@@ -39,7 +39,7 @@ struct SystemView: View {
                         }
                     }
                 }
-                Section(footer: Text("优淘后台 v1.0 · 站点 \(state.config?.siteRoot ?? "")")) {
+                Section(footer: Text("优淘软件源 v1.0 · 站点 \(state.config?.siteRoot ?? "")")) {
                     EmptyView()
                 }
             }

@@ -16,7 +16,7 @@ struct SetupView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "shippingbox.fill")
                             .font(.system(size: 40)).foregroundColor(.white)
-                        Text("优淘后台").font(.title.bold()).foregroundColor(.white)
+                        Text("优淘软件源").font(.title.bold()).foregroundColor(.white)
                         Text("连接你的软件源管理后台").font(.caption).foregroundColor(.white.opacity(0.85))
                     }
                     .frame(maxWidth: .infinity)

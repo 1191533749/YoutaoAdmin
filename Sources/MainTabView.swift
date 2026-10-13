@@ -35,7 +35,7 @@ struct OverviewView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         VStack(alignment: .leading, spacing: 3) {
-                            Text("优淘后台").font(.title2.weight(.bold)).foregroundColor(.white)
+                            Text("优淘软件源").font(.title2.weight(.bold)).foregroundColor(.white)
                             Text(siteRoot).font(.caption).foregroundColor(.white.opacity(0.85))
                         }
                         Spacer()

@@ -13,7 +13,7 @@ targets:
     info:
       path: Info.plist
       properties:
-        CFBundleDisplayName: 优淘后台
+        CFBundleDisplayName: 优淘软件源
         CFBundleShortVersionString: "1.0.0"
         CFBundleVersion: "1"
         UILaunchScreen: {}
